@@ -2,6 +2,7 @@
 #**Plot labels may differ in position between conditions. Adjust the locations using the adj, cex and line options**
 
 if (!require(TOSTER)) {install.packages('TOSTER')}
+#Load TOSTER package
 library(TOSTER)
 
 library(purrr)
@@ -16,8 +17,8 @@ require(plotrix)
 plot1 <- TOSTtwo(m1 = 2.6, m2 = 4.5, sd1 = 2.5, sd2 = 2.3, n1 = 53, n2 = 48, low_eqbound_d = -0.5, high_eqbound_d = 0.5) #Lintzeris et al. (2002): 8 day self-reported heorin use, intervention (1) vs. control (2)
 # A randomized controlled trial of buprenorphine in the management of short‐term ambulatory heroin withdrawal
 
-plot2 <- TOSTtwo(m1 = 1.8, m2 = 1.88, sd1 = 0.84, sd2 = 0.81, n1 = 108, n2 = 103, low_eqbound_d = -0.5, high_eqbound_d = 0.5)#Example data created by Heirene (2019)
-#Example
+plot2 <- TOSTtwo(m1 = 2.67, m2 = 2.50, sd1 = 1.10, sd2 = 1.12, n1 = 415, n2 = 1935, low_eqbound_d = -0.5, high_eqbound_d = 0.5)#Bener et al. (2019): Difference between students with internet addiction disorder (1) vs. "normal" students (2) on question 4 of the 14-item Fatigue Scale ("Do you have problems starting things?")
+#Internet Addiction, Fatigue, and Sleep Problems Among Adolescent Students: a Large-Scale Study
 
 plot3 <- TOSTtwo(m1 = 4.72, m2 = 5.15, sd1 = 5.08, sd2 = 5.71, n1 = 65, n2 = 63, low_eqbound_d = -0.5, high_eqbound_d = 0.5)#Petrakis et al. (2017): mean no. of drinks per day during 30-day follow-up, intervention (1) vs. control (2)
 # Mecamylamine treatment for alcohol dependence: a randomized controlled trial
@@ -28,19 +29,20 @@ plot4 <- TOSTtwo(m1 = 2.9, m2 = 4.7, sd1 = 7.3, sd2 = 10.5, n1 = 42, n2 = 45, lo
 #Arrange plots in grad with labels:
 
 line = -2
-cex = 2
-adj  = 0.035
+cex = 1
+adj  = 1
 
 par(mfrow = c (2,2))
 plot(plot1)
 title(outer=outer,adj=adj,main="1",cex.main=cex,col="black",font=2,line=line)
-title(outer=outer,adj=.28,main="Lintzeris et al. (2002)",cex.main=1.5,col="black",font=2,line=-10)
+# title(outer=outer,adj=.28,main="Lintzeris et al. (2002)",cex.main=1.5,col="black",font=2,line=-10)
 plot(plot2)
 title(outer=outer,adj=0.54,main="2",cex.main=cex,col="black",font=2,line=line)
-#title(outer=outer,adj=0.84,main="Example",cex.main=1.5,col="black",font=2,line=-10)
+# title(outer=outer,adj=0.84,main="Example",cex.main=1.5,col="black",font=2,line=-10)
 plot(plot3)
 title(outer=outer,adj=adj,main="3",cex.main=cex,col="black",font=2,line=-30.5)
-title(outer=outer,adj=.28,main="Petrakis et al. (2017)",cex.main=1.5,col="black",font=2,line=-38)
+# title(outer=outer,adj=.28,main="Petrakis et al. (2017)",cex.main=1.5,col="black",font=2,line=-38)
 plot(plot4)
 title(outer=outer,adj=0.54,main="4",cex.main=cex,col="black",font=2,line=-30.5)
-title(outer=outer,adj=0.9,main="Gronbaek & Nielsen (2007)",cex.main=1.5,col="black",font=2,line=-38)
+# title(outer=outer,adj=0.9,main="Gronbaek & Nielsen (2007)",cex.main=1.5,col="black",font=2,line=-38)
+
