@@ -1,0 +1,12 @@
+
+# Code for caclating required sample sizes when using equivalence ranges of d = -0.10 to 0.10 (example 1) and d = -0.05 to 0.05 (example 2)
+# Assumes the actual effect between groups is d = 0.
+# Original code for power analysis when using equivalence testing provided by D. Lakens @ https://osf.io/gr6at/
+
+install.packages("TOSTER") #install relevant package
+
+TOSTER::powerTOSTtwo(alpha = 0.05, statistical_power = 0.8, low_eqbound_d = -0.10, high_eqbound_d = 0.10) # Example 1
+# Output: The required sample size to achieve 80 % power with equivalence bounds of -0.1 and 0.1 is 1713 per group, or 3426 in total.
+
+TOSTER::powerTOSTtwo(alpha = 0.05, statistical_power = 0.8, low_eqbound_d = -0.05, high_eqbound_d = 0.05) # Example 2
+# Output: The required sample size to achieve 80 % power with equivalence bounds of -0.05 and 0.05 is 6852 per group, or 13704 in total.
