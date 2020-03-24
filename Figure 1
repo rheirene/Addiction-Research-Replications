@@ -15,6 +15,7 @@ baseplot <-   ggplot(df) +
   theme_classic() +
   theme(plot.title = element_text(size = rel(1.5), face = "bold"), #font size & appearance for plot titles
         axis.title.y = element_blank(), #remove title of y-axis
+         axis.line.y = element_blank(), #remove y-axis line
         axis.title.x = element_text(size=rel(1.5), lineheight = 0.5), #font size for x-axis label
         plot.margin=unit(c(0.5,0.8,0.5,0.8),"cm")) #add padding around each plot to make them look nicer when combined; margin order: top, right, bottom, left
 
